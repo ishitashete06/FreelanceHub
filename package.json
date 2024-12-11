@@ -10,6 +10,9 @@
     "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+  "node": "20.x"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
