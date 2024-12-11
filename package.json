@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon server/index.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start":"nodemon server/index.js",
+    "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,7 +21,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.1",
+    "mongoose": "^8.8.4",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.7",
     "readable-stream": "^4.5.2"
