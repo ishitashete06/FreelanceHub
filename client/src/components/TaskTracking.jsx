@@ -23,7 +23,7 @@ function TaskTracking() {
 
     const saveTasks = () => {
         axios.post(`/api/tasks/${userId}`, { tasks }).then(() => {
-            console.log("Tasks updated successfully!");
+            //console.log("Tasks updated successfully!");
         });
     };
 

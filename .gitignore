@@ -17,3 +17,6 @@ dist/
 
 # Miscellaneous
 *.bak
+
+.env
+node_modules

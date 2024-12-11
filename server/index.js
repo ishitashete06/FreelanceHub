@@ -11,6 +11,7 @@ import applicationRoute from "./routes/application.route.js";
 import savedProjectRoute from "./routes/savedProject.route.js";
 import taskRoutes from "./routes/tasks.route.js";
 
+import path from "path";
 
 dotenv.config({});
 
@@ -29,6 +30,8 @@ app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
 
+const _dirname=path.resolve();
+
 // api's
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
@@ -38,7 +41,10 @@ app.use("/api/v1/scores", scoresRoute);
 app.use("/api/v1/saved-projects", savedProjectRoute);
 app.use('/api/tasks', taskRoutes);
 
-
+app.use(express.static(path.join(_dirname,"/client/dist")));
+app.get('*',(_,res)=>{
+    res.sendFile(path.resolve(_dirname,"client", "dist", "index.html"));
+})
 
 app.use(cors({
     origin: "http://localhost:5173", // replace with your frontend URL

@@ -4,7 +4,7 @@ export const saveProject = async (req, res) => {
   try {
     const { jobId } = req.body;  // Ensure jobId is extracted correctly
     const userId = req.id;
-    console.log("User ID:", userId);
+    //console.log("User ID:", userId);
 
     if (!jobId) {
       return res.status(400).json({ success: false, message: "Job ID is required" });

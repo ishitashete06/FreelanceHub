@@ -28,7 +28,7 @@ const Login = () => {
 
     const submitHandler = async (e) => {
         debugger
-        console.log(USER_API_END_POINT);
+        //console.log(USER_API_END_POINT);
         e.preventDefault();
         try {
             dispatch(setLoading(true));

@@ -34,7 +34,7 @@ const Signup = () => {
     }
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log(input);
+        //console.log(input);
         const formData = new FormData();    //formdata object
         formData.append("fullname", input.fullname);
         formData.append("email", input.email);
@@ -42,7 +42,7 @@ const Signup = () => {
         formData.append("password", input.password);
         formData.append("role", input.role);
 
-        console.log(formData);
+        //console.log(formData);
         if (input.file) {
             formData.append("file", input.file);
         }
@@ -54,7 +54,7 @@ const Signup = () => {
                 withCredentials: true,
             });
             if (res.data.success) {
-                console.log("in login");
+                //console.log("in login");
                 navigate("/login");
                 toast.success(res.data.message);
             }

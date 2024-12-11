@@ -81,13 +81,13 @@ function Assessment() {
   };
 
   const startProctoring = () => {
-    console.log('Initializing AI-driven proctoring...');
+    //console.log('Initializing AI-driven proctoring...');
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({ video: true })
         .then((stream) => {
           streamRef.current = stream; // Store the stream reference
           webcamRef.current.srcObject = stream;
-          console.log('Camera activated!');
+          //console.log('Camera activated!');
           detectAnomalies(); // Start anomaly detection
         })
         .catch((err) => console.log('Camera not accessible:', err));
@@ -95,7 +95,7 @@ function Assessment() {
   };
 
   const detectAnomalies = () => {
-    console.log('Running anomaly detection...');
+    //console.log('Running anomaly detection...');
     // Placeholder: logic for detecting anomalies like no face detected or user turning away
     setTimeout(() => {
       const randomAnomaly = Math.random() > 0.7; // Simulate random anomaly
@@ -109,7 +109,7 @@ function Assessment() {
     if (streamRef.current) {
       const tracks = streamRef.current.getTracks();
       tracks.forEach(track => track.stop()); // Stop the camera stream
-      console.log('Camera deactivated!');
+      //console.log('Camera deactivated!');
     }
   };  
 
@@ -141,7 +141,7 @@ function Assessment() {
       score: calculatedScore
     };
   
-    console.log('Sending data to backend:', payload);
+    //console.log('Sending data to backend:', payload);
   
     // Send data to the backend
     try {
@@ -155,7 +155,7 @@ function Assessment() {
   
       const data = await response.json();
       if (data.success) {
-        console.log('Score successfully saved:', data);
+        //console.log('Score successfully saved:', data);
       } else {
         console.error('Error saving score:', data.message);
       }
@@ -174,7 +174,7 @@ function Assessment() {
       behavior: anomalies.length > 0 ? anomalies.join(', ') : 'No anomalies detected', // Report anomalies if any
     };
 
-    console.log('Generated Report:', report);
+    //console.log('Generated Report:', report);
     return report;
   };
 

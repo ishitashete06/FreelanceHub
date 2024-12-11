@@ -57,7 +57,7 @@ const Browse = () => {
       if (!data.success) {
         console.error("Failed to save job:", data.message);
       } else {
-        console.log("Job saved successfully:", data.savedProject);
+        //console.log("Job saved successfully:", data.savedProject);
       }
     } catch (error) {
       console.error("Error saving job to backend:", error);
