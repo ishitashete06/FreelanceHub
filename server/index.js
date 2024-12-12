@@ -10,12 +10,14 @@ import scoresRoute from "./routes/scores.route.js";
 import applicationRoute from "./routes/application.route.js";
 import savedProjectRoute from "./routes/savedProject.route.js";
 import taskRoutes from "./routes/tasks.route.js";
+import mongoose from 'mongoose';
 
 import path from "path";
 
 dotenv.config({});
 
 const app = express();
+
 
 // middleware
 app.use(express.json());
